@@ -1,0 +1,93 @@
+{
+   "title": "Task_Generator_JSON",
+   "description": "The schema for a JIRA task.",
+   "type": "object",
+   "additionalProperties":false,
+   "properties": {
+   
+      "project": {
+         "description": "This is the project the new task will be added to.",
+         "type": "string",
+         "minLength": 1
+      },
+      
+      "summary": {
+         "description": "Name of the task",
+         "type": "string",
+         "minLength": 1
+      },
+      
+      "epic_link": {
+         "type": "string",
+         "description": "This is the epic link the task will be connected to.",
+         "minLength": 1
+      },
+
+      "story_points":{
+         "description": "The number of story points for the task.",
+         "type": "number",
+         "minimum": 0
+      },
+
+      "assignee":{
+         "description": "The user assigned to the task.",
+         "type": "string"
+      },
+
+      "priority":{
+         "description": "The priority of the task.",
+         "type": "string"
+      },
+
+      "description":{
+         "description": "The description of the task.",
+         "type": "string"
+      },
+
+      "components":{
+         "description": "The components to be assigned to the task.",
+         "type": "array",
+         "items": {
+            "type": "string"
+         }
+      },
+      "reporter":{
+         "description": "The reporter of the task.",
+         "type": "string",
+         "minLength": 1
+      },
+      "issue_type":{
+         "description": "The type of the task.",
+         "type": "string",
+         "minLength": 1
+      },
+
+      "linked_issues":{
+         "description": "Tasks to be linked to this task.",
+         "type": "array",
+         "minItems": 1,
+         "items": {
+            "type": "object",
+              "minProperties":1,
+              "additionalProperties":false,
+              "properties":{
+                  "blockedBy":{"type":"string"},
+                  "blocks":{"type":"string"},
+                  "clones":{"type":"string"},
+                  "clonedBy":{"type":"string"},
+                  "duplicates":{"type":"string"},
+                  "duplicatedBy":{"type":"string"},
+                  "escalates":{"type":"string"},
+                  "escalatedBy":{"type":"string"},
+                  "splitTo":{"type":"string"},
+                  "splitFrom":{"type":"string"},
+                  "causes":{"type":"string"},
+                  "causedBy":{"type":"string"},
+                  "relatesTo":{"type":"string"}
+               }
+         }
+      }
+   },
+   
+   "required": ["project", "summary", "epic_link", "reporter", "issue_type"]
+}
