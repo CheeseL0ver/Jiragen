@@ -155,7 +155,7 @@ The above JSON file would create two tasks:
 
 With the following attributes:
 | Summary | Project | Story Points | Assignee | Priority | Description |Components | Reporter | Issue Type | Link |
-|---|---|---|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|---|
 | Blocked Task | Internal | 1 | user@domain.com | 2— Normal | Normal Task | "Development", "Updates" | reporter@domain.com | Task | blockedBy: Blocker Task |
 | Blocker Task | Internal | 9 | reporter@domain.com | 4— Urgent | Urgent Task | "Development", "Failure" | user@domain.com | Task | blocks: Blocked Task |
 
