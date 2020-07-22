@@ -1,6 +1,6 @@
 # Jiragen
 
-#### A Python CLI tool for autmated Jira Task creation.
+#### A Python CLI tool for automated Jira Task creation.
 
 ## Overview
 
